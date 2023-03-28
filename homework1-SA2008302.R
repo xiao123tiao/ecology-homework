@@ -16,9 +16,13 @@ class(env_tb)                 ##checking the class of the data.
 env_tb
 #3rd task
 dfs<-env_tb$dfs
-env_tb[dfs>1000,]            
-env_final<-env_tb[env_tb$dfs>1000,] %>% #Extract and remain the data of the dfs with more than 1000 km.
-select(site, dfs, slo, flo, pH, nit, oxy)%>% #Select these columns:site, dfs, slo, flo, pH, nit, oxy for further analysis.
-rename(distsour = dfs, slope =slo , flowrate =flo ,  nitrogen =nit , oxygen =oxy )%>% #Rename some columns as follows: dfs to distsour, slo to slope, flo to flowrate, nit to nitrogen, oxy to oxygen.
-arrange(slope,desc(pH))#Arrange the data first by slope in ascending order, and then by pH in descending order.
+env_tb[dfs>1000,] 
+#Extract and remain the data of the dfs with more than 1000 km.           
+env_final<-env_tb[env_tb$dfs>1000,] %>% 
+#Select these columns:site, dfs, slo, flo, pH, nit, oxy for further analysis.
+select(site, dfs, slo, flo, pH, nit, oxy)%>% 
+#Rename some columns as follows: dfs to distsour, slo to slope, flo to flowrate, nit to nitrogen, oxy to oxygen.
+rename(distsour = dfs, slope =slo , flowrate =flo ,  nitrogen =nit , oxygen =oxy )%>% 
+#Arrange the data first by slope in ascending order, and then by pH in descending order.
+arrange(slope,desc(pH))
 

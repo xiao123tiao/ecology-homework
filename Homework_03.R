@@ -56,8 +56,6 @@ spe.t.chi.single<-hclust(spe.t.D,method = "single")
 plot(spe.t.chi.single)
 spe.t.chi.ward <- hclust(spe.t.D, method="ward.D2")
 plot(spe.t.chi.ward)
-source("coldiss.R")
-coldiss(spe.t.D,byrank=FALSE,diag=FALSE)
 #Q mode aggregated the locations
 spe.norm<-decostand(spe,"normalize")
 #Calculate the string distance matrix between quadrat
